@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.0-pg17
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=librarian
+      - POSTGRES_USER=librarian_user
+      - POSTGRES_DB=librarianvdb
+      - POSTGRES_HOST_AUTH_METHOD=trust

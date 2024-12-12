@@ -1,0 +1,30 @@
+{
+	"name": "tell-me-stuffs",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"db:migrate": "drizzle-kit generate",
+		"db:apply": "drizzle-kit migrate",
+		"db:drop": "drizzle-kit drop",
+		"db:up": "docker compose -f ./docker-compose-librarianvdb.yaml up",
+		"start": "bun run ./src/index.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/pg": "^8.11.10",
+		"drizzle-kit": "^0.30.0",
+		"tsx": "^4.19.2"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"ai": "^4.0.14",
+		"dotenv": "^16.4.7",
+		"drizzle-orm": "^0.38.1",
+		"gray-matter": "^4.0.3",
+		"ollama-ai-provider": "^1.1.0",
+		"pg": "^8.13.1",
+		"zod": "^3.24.1"
+	}
+}

@@ -1,0 +1,3 @@
+
+
+export { documentsTable } from './documents';
